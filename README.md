@@ -6,7 +6,7 @@ https://github.com/microsoft/azure-pipelines-tasks/issues/12101
 When using pattern matching to find the SQL file to deploy in azure release pipeline/`Azure SQL Database deployment` task, an error is raised when there is more than 1 one: `Found more than one file to deploy with search pattern **/*.sql`
 
 ## Solution
-Add a powershell task in the build pipeline to append all possible sql scripts into one before pushing the artifact. This powershell adds `GO` statement after each individual sql script in the combining process. You can find the powershell file in this repository.
+Add a powershell task in the build pipeline to append all possible sql scripts into one before pushing the artifact. This powershell adds `GO` statement after each individual sql script in the combining process. You can find the powershell file in this repository. Dont forget to modify the deploy search pattern from `**/*.sql` to the the target sql file. 
 
 reference:
 https://sqlserverpowershell.com/2011/10/20/powershell-script-to-check-for-low-drive-space-2/
